@@ -1,0 +1,238 @@
+/* =========================================
+   TOUR PAGE
+========================================= */
+
+.tour-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 105px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(104, 65, 43, 0.18) 0%,
+            transparent 50%
+        ),
+        var(--color-brown-deep);
+}
+
+
+/* =========================================
+   TOUR SECTION
+========================================= */
+
+.tour-section {
+    width: min(100% - 40px, 730px);
+    margin: 0 auto;
+    padding: 95px 0 150px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.tour-title {
+    margin: 0 0 45px;
+
+    color: #e8d2b5;
+
+    font-family: var(--font-primary);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   EVENT LIST
+========================================= */
+
+.tour-list {
+    width: 100%;
+}
+
+
+/* =========================================
+   EVENT
+========================================= */
+
+.tour-event {
+    display: grid;
+
+    grid-template-columns: 190px 1fr 155px;
+
+    align-items: center;
+
+    column-gap: 0;
+
+    width: 100%;
+    min-height: 89px;
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.tour-date {
+    color: rgba(190, 151, 112, 0.88);
+
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.tour-location {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    padding-left: 0;
+
+    color: #e8d2b5;
+
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.15;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   TICKETS
+========================================= */
+
+.tour-ticket {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 155px;
+    height: 39px;
+
+    border: 2px solid rgba(190, 151, 112, 0.9);
+
+    background: transparent;
+
+    color: rgba(190, 151, 112, 0.95);
+
+    font-family: var(--font-primary);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Original has some filled ticket states */
+.tour-ticket:hover {
+    background: #b88d63;
+    border-color: #b88d63;
+    color: #21130d;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .tour-page {
+        padding-top: 58px;
+    }
+
+    .tour-section {
+        width: calc(100% - 40px);
+        padding: 65px 0 100px;
+    }
+
+    .tour-title {
+        margin-bottom: 45px;
+        font-size: 32px;
+    }
+
+    .tour-event {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+
+        min-height: 0;
+
+        padding: 22px 0;
+    }
+
+    .tour-date {
+        font-size: 17px;
+    }
+
+    .tour-location {
+        font-size: 10px;
+    }
+
+    .tour-ticket {
+        width: 150px;
+        height: 40px;
+
+        margin-top: 5px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .tour-section {
+        width: calc(100% - 30px);
+        padding-top: 55px;
+    }
+
+    .tour-title {
+        font-size: 29px;
+        margin-bottom: 35px;
+    }
+
+    .tour-event {
+        padding: 20px 0;
+    }
+
+    .tour-date {
+        font-size: 16px;
+    }
+
+    .tour-location {
+        font-size: 9px;
+    }
+
+    .tour-ticket {
+        width: 145px;
+        height: 38px;
+        font-size: 15px;
+    }
+}

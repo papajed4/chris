@@ -1,0 +1,268 @@
+/* =========================================================
+   CHRIS BROWN — HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 680px;
+    overflow: hidden;
+    background: #2a170e;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN HERO IMAGE
+   --------------------------------------------------------- */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-background img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* ---------------------------------------------------------
+   BROWN GRAPHIC
+   --------------------------------------------------------- */
+
+.hero-brown {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    z-index: 4;
+
+    width: 43%;
+    max-width: 590px;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+.hero-brown img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* ---------------------------------------------------------
+   FOREGROUND ARTIST
+   --------------------------------------------------------- */
+
+/*
+   The complete Chris Brown artwork is already contained
+   inside the main hero image, so we don't stack another
+   artist image over it.
+*/
+
+.hero-artist {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT
+   --------------------------------------------------------- */
+
+.hero-content {
+    position: absolute;
+
+    top: 47.5%;
+    left: 11%;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: auto;
+
+    transform: none;
+}
+
+
+/* ---------------------------------------------------------
+   LISTEN NOW BUTTON
+   --------------------------------------------------------- */
+
+.hero-listen {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 218px;
+    height: 53px;
+
+    padding: 0;
+
+    border: 1px solid #e8d2b5;
+
+    background: transparent;
+
+    color: #e8d2b5;
+
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1;
+    letter-spacing: 0;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.hero-listen:hover {
+    background: #e8d2b5;
+    color: #28160e;
+}
+
+
+/* ---------------------------------------------------------
+   HERO VIGNETTE
+   --------------------------------------------------------- */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 10, 6, 0.12) 0%,
+            transparent 35%,
+            transparent 75%,
+            rgba(10, 6, 4, 0.18) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(10, 5, 3, 0.06) 0%,
+            transparent 25%,
+            transparent 78%,
+            rgba(10, 5, 3, 0.25) 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   LARGE DESKTOP
+   --------------------------------------------------------- */
+
+@media (min-width: 1400px) {
+
+    .hero-brown {
+        width: 43%;
+        max-width: 590px;
+    }
+
+    .hero-content {
+        left: 11%;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   LAPTOP
+   --------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+
+    .hero-brown {
+        width: 46%;
+    }
+
+    .hero-content {
+        left: 10%;
+        top: 47%;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .hero {
+        height: 100svh;
+        min-height: 600px;
+    }
+
+    .hero-background img {
+        object-position: center center;
+    }
+
+    .hero-brown {
+        top: 20%;
+        width: 82%;
+        max-width: none;
+    }
+
+    .hero-content {
+        top: auto;
+        left: 50%;
+        bottom: 10%;
+
+        align-items: center;
+        justify-content: center;
+
+        transform: translateX(-50%);
+    }
+
+    .hero-listen {
+        width: 165px;
+        height: 46px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+    .hero-brown {
+        top: 21%;
+        width: 87%;
+    }
+
+    .hero-content {
+        bottom: 9%;
+    }
+
+    .hero-listen {
+        width: 155px;
+        height: 44px;
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,343 @@
+/* =========================================
+   JOIN PAGE
+========================================= */
+
+.join-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    padding-top: 105px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(104, 65, 43, 0.18) 0%,
+            transparent 52%
+        ),
+        var(--color-brown-deep);
+}
+
+
+/* =========================================
+   MAIN JOIN
+========================================= */
+
+.join-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 620px;
+
+    padding: 90px 25px 110px;
+
+    text-align: center;
+}
+
+
+.join-content {
+    width: min(100%, 650px);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.join-eyebrow {
+    margin-bottom: 20px;
+
+    color: rgba(190, 151, 112, 0.75);
+
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.join-title {
+    color: #e8d2b5;
+
+    font-family: var(--font-primary);
+    font-size: clamp(70px, 10vw, 125px);
+    font-weight: 700;
+    line-height: 0.9;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.join-divider {
+    width: 70px;
+    height: 1px;
+
+    margin: 34px auto 30px;
+
+    background: rgba(190, 151, 112, 0.65);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.join-description {
+    width: min(100%, 500px);
+    margin: 0 auto;
+
+    color: rgba(231, 220, 199, 0.68);
+
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   JOIN BUTTON
+========================================= */
+
+.join-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 190px;
+    height: 50px;
+
+    margin-top: 35px;
+
+    border: 1px solid #b88d63;
+
+    background: transparent;
+
+    color: #b88d63;
+
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.join-button:hover {
+    background: #b88d63;
+    color: #21130d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.join-details {
+    width: 100%;
+
+    padding: 85px 25px 110px;
+
+    border-top: 1px solid rgba(231, 220, 199, 0.10);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(36, 23, 19, 0.55),
+            rgba(23, 16, 13, 0.95)
+        );
+}
+
+
+.join-detail-inner {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    width: min(100%, 1050px);
+
+    margin: 0 auto;
+
+    border-top: 1px solid rgba(231, 220, 199, 0.16);
+    border-bottom: 1px solid rgba(231, 220, 199, 0.16);
+}
+
+
+.join-detail {
+    min-height: 220px;
+
+    padding: 35px 38px;
+
+    border-right: 1px solid rgba(231, 220, 199, 0.12);
+}
+
+
+.join-detail:last-child {
+    border-right: 0;
+}
+
+
+.join-detail-number {
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: rgba(190, 151, 112, 0.65);
+
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+}
+
+
+.join-detail h2 {
+    margin-bottom: 15px;
+
+    color: #e8d2b5;
+
+    font-family: var(--font-primary);
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.join-detail p {
+    max-width: 220px;
+
+    color: rgba(231, 220, 199, 0.55);
+
+    font-family: var(--font-primary);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .join-detail-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .join-detail {
+        min-height: 0;
+
+        border-right: 0;
+        border-bottom: 1px solid rgba(231, 220, 199, 0.12);
+    }
+
+    .join-detail:last-child {
+        border-bottom: 0;
+    }
+
+    .join-detail p {
+        max-width: 450px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .join-page {
+        padding-top: 58px;
+    }
+
+    .join-section {
+        min-height: 580px;
+
+        padding: 80px 25px 90px;
+    }
+
+    .join-eyebrow {
+        font-size: 10px;
+    }
+
+    .join-title {
+        font-size: 70px;
+    }
+
+    .join-description {
+        font-size: 12px;
+    }
+
+    .join-button {
+        width: 170px;
+        height: 47px;
+
+        font-size: 13px;
+    }
+
+    .join-details {
+        padding: 65px 20px 85px;
+    }
+
+    .join-detail {
+        padding: 30px 25px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .join-section {
+        min-height: 530px;
+
+        padding-top: 70px;
+    }
+
+    .join-title {
+        font-size: 60px;
+    }
+
+    .join-divider {
+        margin-top: 28px;
+        margin-bottom: 25px;
+    }
+
+    .join-description {
+        font-size: 11px;
+    }
+
+    .join-detail h2 {
+        font-size: 19px;
+    }
+
+    .join-detail p {
+        font-size: 10px;
+    }
+}

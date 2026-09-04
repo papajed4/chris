@@ -1,0 +1,362 @@
+/* =========================================================
+   CHRIS BROWN — MUSIC PAGE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   MUSIC PAGE
+   --------------------------------------------------------- */
+
+.music-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 105px;
+    background: var(--color-brown-deep);
+}
+
+
+/* ---------------------------------------------------------
+   MUSIC HEADER
+   --------------------------------------------------------- */
+
+.music-header {
+    width: min(100%, 900px);
+    margin: 0 auto;
+    padding: 80px 0 65px;
+    text-align: center;
+}
+
+.music-header h1 {
+    color: var(--color-cream);
+    font-family: var(--font-primary);
+    font-size: clamp(40px, 5vw, 10px);
+    font-weight: 400;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+.music-header p {
+    margin-top: 22px;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   RELEASE LIST
+   --------------------------------------------------------- */
+
+.music-releases {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   INDIVIDUAL RELEASE
+   --------------------------------------------------------- */
+
+.music-release {
+    position: relative;
+    width: 100%;
+    padding: 45px 0 125px;
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   RELEASE ARTWORK
+   --------------------------------------------------------- */
+
+.music-artwork {
+    width: min(76vw, 650px);
+    margin: 0 auto;
+}
+
+.music-artwork img {
+    display: block;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   RELEASE INFORMATION
+   --------------------------------------------------------- */
+
+.music-info {
+    width: min(100%, 600px);
+    margin: 34px auto 0;
+    text-align: center;
+}
+
+.music-title {
+    color: var(--color-cream);
+    font-family: var(--font-primary);
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.music-meta {
+    margin-top: 9px;
+    color: var(--color-text-muted);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   GET IT NOW BUTTON
+   --------------------------------------------------------- */
+
+.music-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 155px;
+    height: 44px;
+
+    margin-top: 25px;
+    padding: 0 24px;
+
+    border: 1px solid var(--color-cream);
+
+    background: transparent;
+    color: var(--color-cream);
+
+    font-family: var(--font-primary);
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color var(--transition-base),
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.music-action:hover {
+    background: var(--color-cream);
+    color: var(--color-brown-deep);
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   RELEASE DIVIDER
+   --------------------------------------------------------- */
+
+.music-release + .music-release {
+    padding-top: 30px;
+}
+
+.music-release + .music-release::before {
+    content: "";
+
+    display: block;
+
+    width: min(100% - 80px, 900px);
+    height: 1px;
+
+    margin: 0 auto 90px;
+
+    background: rgba(231, 220, 199, 0.10);
+}
+
+
+/* ---------------------------------------------------------
+   FEATURED / LATEST RELEASE
+   --------------------------------------------------------- */
+
+.music-release.featured {
+    padding-top: 30px;
+    padding-bottom: 145px;
+}
+
+.music-release.featured .music-artwork {
+    width: min(82vw, 720px);
+}
+
+
+/* ---------------------------------------------------------
+   MANAGEMENT CTA
+   --------------------------------------------------------- */
+
+.music-management {
+    width: 100%;
+    padding: 110px 0 120px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--color-brown-deep) 0%,
+            var(--color-brown-dark) 100%
+        );
+
+    border-top: 1px solid rgba(231, 220, 199, 0.10);
+}
+
+.music-management-inner {
+    width: min(100%, 650px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.music-management-inner h2 {
+    color: var(--color-cream);
+    font-family: var(--font-primary);
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.music-management-inner p {
+    max-width: 520px;
+    margin: 22px auto 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.music-management-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+    height: 44px;
+
+    margin-top: 28px;
+    padding: 0 25px;
+
+    border: 1px solid var(--color-cream);
+
+    color: var(--color-cream);
+
+    font-family: var(--font-primary);
+    font-size: 10px;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color var(--transition-base),
+        color var(--transition-base);
+}
+
+.music-management-button:hover {
+    background: var(--color-cream);
+    color: var(--color-brown-deep);
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .music-page {
+        padding-top: 58px;
+    }
+
+    .music-header {
+        padding: 65px 0 45px;
+    }
+
+    .music-header h1 {
+        font-size: 58px;
+    }
+
+    .music-release {
+        padding: 30px 0 90px;
+    }
+
+    .music-artwork {
+        width: min(88vw, 600px);
+    }
+
+    .music-release.featured .music-artwork {
+        width: min(92vw, 650px);
+    }
+
+    .music-title {
+        font-size: 21px;
+    }
+
+    .music-release + .music-release::before {
+        width: calc(100% - 44px);
+        margin-bottom: 65px;
+    }
+
+    .music-management {
+        padding: 80px 0 90px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL PHONES
+   --------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+    .music-header {
+        padding: 55px 0 35px;
+    }
+
+    .music-header h1 {
+        font-size: 48px;
+    }
+
+    .music-header p {
+        font-size: 11px;
+    }
+
+    .music-release {
+        padding-bottom: 75px;
+    }
+
+    .music-artwork {
+        width: 90vw;
+    }
+
+    .music-release.featured .music-artwork {
+        width: 94vw;
+    }
+
+    .music-info {
+        margin-top: 27px;
+    }
+
+    .music-title {
+        font-size: 19px;
+    }
+
+    .music-action {
+        min-width: 145px;
+        height: 42px;
+        font-size: 9px;
+    }
+
+    .music-management {
+        padding: 70px 0 80px;
+    }
+
+}
