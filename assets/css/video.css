@@ -1,0 +1,175 @@
+/* =========================================
+   VIDEO PAGE
+========================================= */
+
+.video-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding-top: 105px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(104, 65, 43, 0.18) 0%,
+            transparent 50%
+        ),
+        var(--color-brown-deep);
+}
+
+
+/* =========================================
+   VIDEO HEADER
+========================================= */
+
+.video-header {
+    width: 100%;
+
+    padding: 100px 20px 48px;
+
+    text-align: center;
+}
+
+
+.video-header h1 {
+    color: #e8d2b5;
+
+    font-family: var(--font-primary);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   VIDEO ITEM
+========================================= */
+
+.video-item {
+    width: 100%;
+
+    padding: 0 0 105px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   VIDEO THUMBNAIL
+========================================= */
+
+.video-thumbnail {
+    position: relative;
+
+    display: block;
+
+    width: min(100% - 40px, 800px);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+/* =========================================
+   VIDEO IMAGE
+========================================= */
+
+.video-thumbnail img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.3s ease;
+}
+
+
+.video-thumbnail:hover img {
+    transform: scale(1.015);
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .video-header {
+        padding-top: 80px;
+    }
+
+    .video-item {
+        padding-bottom: 85px;
+    }
+
+    .video-thumbnail {
+        width: calc(100% - 40px);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .video-page {
+        padding-top: 58px;
+    }
+
+    .video-header {
+        padding: 65px 20px 40px;
+    }
+
+    .video-header h1 {
+        font-size: 32px;
+    }
+
+    .video-item {
+        padding-bottom: 65px;
+    }
+
+    .video-thumbnail {
+        width: calc(100% - 30px);
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .video-header {
+        padding-top: 55px;
+        padding-bottom: 35px;
+    }
+
+    .video-header h1 {
+        font-size: 28px;
+    }
+
+    .video-item {
+        padding-bottom: 55px;
+    }
+
+    .video-thumbnail {
+        width: calc(100% - 24px);
+    }
+}
