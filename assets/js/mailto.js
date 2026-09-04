@@ -113,116 +113,129 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* -----------------------------------------------------
-       OPEN MANAGEMENT EMAIL
+       BUILD MAILTO URL
        ----------------------------------------------------- */
 
-    function openManagementEmail(type, extraData = {}) {
+    function buildMailtoURL(type, extraData = {}) {
 
-        const inquiry =
-            inquiryTypes[type] || inquiryTypes.general;
+        const inquiry = inquiryTypes[type] || inquiryTypes.general;
 
         let subject = inquiry.subject;
         let message = inquiry.message;
-
 
         /* ---------------------------------------------
            OPTIONAL EVENT INFORMATION
            --------------------------------------------- */
 
         if (extraData.date) {
-
-            message +=
-                "\n\nDate: " +
-                extraData.date;
-
+            message += "\n\nDate: " + extraData.date;
         }
 
         if (extraData.venue) {
-
-            message +=
-                "\nVenue: " +
-                extraData.venue;
-
+            message += "\nVenue: " + extraData.venue;
         }
 
         if (extraData.location) {
-
-            message +=
-                "\nLocation: " +
-                extraData.location;
-
+            message += "\nLocation: " + extraData.location;
         }
-
 
         /* ---------------------------------------------
            BUILD MAILTO LINK
            --------------------------------------------- */
 
-        const mailtoURL =
+        return (
             "mailto:" +
             MANAGEMENT_EMAIL +
             "?subject=" +
             encodeURIComponent(subject) +
             "&body=" +
-            encodeURIComponent(message);
-
-
-        /* ---------------------------------------------
-           OPEN EMAIL CLIENT
-           --------------------------------------------- */
-
-        window.location.href = mailtoURL;
+            encodeURIComponent(message)
+        );
 
     }
 
 
     /* -----------------------------------------------------
-       MANAGEMENT / ACTION BUTTONS
+       GET EXTRA DATA FROM BUTTON
        ----------------------------------------------------- */
 
-    const actionButtons = document.querySelectorAll(
-        "[data-type]"
-    );
+    function getExtraData(button) {
+        return {
+            date: button.dataset.date || "",
+            venue: button.dataset.venue || "",
+            location: button.dataset.location || ""
+        };
+    }
 
+
+    /* -----------------------------------------------------
+       ATTACH EVENT LISTENERS
+       ----------------------------------------------------- */
+
+    const actionButtons = document.querySelectorAll("[data-type]");
 
     actionButtons.forEach((button) => {
 
-        button.addEventListener("click", (event) => {
+        const type = button.dataset.type;
 
-            const type = button.dataset.type;
-
-
-            /* -----------------------------------------
-               NORMAL LINKS
-
-               LISTEN NOW is not a management action.
-               ----------------------------------------- */
-
-            if (type === "listen") {
-                return;
-            }
+        // Skip LISTEN NOW buttons (they go to external music links)
+        if (type === "listen") {
+            return;
+        }
 
 
-            /* -----------------------------------------
-               PREVENT # FROM JUMPING TO TOP
-               ----------------------------------------- */
+        /* ---------------------------------------------
+           MOUSEENTER: Pre-build the mailto link
+           Allows right-click → "Open in new tab"
+           and "Copy link" to work properly (laptops)
+           --------------------------------------------- */
 
-            event.preventDefault();
+        button.addEventListener("mouseenter", function() {
 
-
-            /* -----------------------------------------
-               OPEN MANAGEMENT EMAIL
-               ----------------------------------------- */
-
-            openManagementEmail(type, {
-
-                date: button.dataset.date,
-                venue: button.dataset.venue,
-                location: button.dataset.location
-
-            });
+            const extraData = getExtraData(this);
+            this.href = buildMailtoURL(type, extraData);
 
         });
+
+
+        /* ---------------------------------------------
+           CLICK: Ensure href is set (mobile fallback)
+           No preventDefault() = natural link behavior
+           Works on all devices!
+           --------------------------------------------- */
+
+        button.addEventListener("click", function() {
+
+            // If href is empty or still "#", build the mailto URL
+            if (!this.href || this.href === "#" || this.href === window.location.href) {
+
+                const extraData = getExtraData(this);
+                this.href = buildMailtoURL(type, extraData);
+
+            }
+
+            // Let the browser handle navigation naturally
+            // No event.preventDefault() here!
+
+        });
+
+
+        /* ---------------------------------------------
+           TOUCHSTART: Pre-build for mobile
+           Some mobile browsers don't fire mouseenter
+           --------------------------------------------- */
+
+        button.addEventListener("touchstart", function() {
+
+            // Only build if not already a mailto link
+            if (!this.href || !this.href.startsWith("mailto:")) {
+
+                const extraData = getExtraData(this);
+                this.href = buildMailtoURL(type, extraData);
+
+            }
+
+        }, { passive: true });
 
     });
 
