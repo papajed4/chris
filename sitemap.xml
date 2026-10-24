@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- =============================================
+         HOMEPAGE
+         ============================================= -->
+    <url>
+        <loc>https://chrisbrownworld.site/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.chrisbrownworld.com/assets/img/brown.webp</image:loc>
+            <image:title>Chris Brown</image:title>
+        </image:image>
+    </url>
+
+    <!-- =============================================
+         MUSIC
+         ============================================= -->
+    <url>
+        <loc>https://chrisbrownworld.site/music.html</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.chrisbrownworld.com/assets/img/music/cb-brown-deluxe.webp</image:loc>
+            <image:title>BROWN Deluxe – Chris Brown</image:title>
+        </image:image>
+    </url>
+
+    <!-- =============================================
+         TOUR
+         ============================================= -->
+    <url>
+        <loc>https://chrisbrownworld.site/tour.html</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- =============================================
+         VIDEO
+         ============================================= -->
+    <url>
+        <loc>https://chrisbrownworld.site/video.html</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.chrisbrownworld.com/assets/img/thumbnails/cb-obvious-thumb.webp</image:loc>
+            <image:title>It Depends / Obvious – Chris Brown</image:title>
+        </image:image>
+    </url>
+
+    <!-- =============================================
+         JOIN
+         ============================================= -->
+    <url>
+        <loc>https://chrisbrownworld.site/join.html</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>
